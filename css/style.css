@@ -35,6 +35,112 @@ header button {
 }
 
 /* MAIN */
+/* SEZIONE BARRA LATELARE */
+.aside {
+   background-color: #000;
+   width: 250px;
+   height: calc(100vh - 80px);
+   position: fixed;
+   z-index: 10;
+   top: 0;
+   left: 0;
+   display: flex;
+   flex-direction: column;
+   flex-shrink: 2;
+   padding: 20px;
+   color: #717171;
+   font-weight: bold;
+   font-size: 14px;
+}
+
+.aside nav ul li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.aside-nav, .playlist {
+    margin-top: 20px;
+}
+
+.aside-nav ul li {
+    margin-top: 12px;
+}
+
+.aside-nav ul li img {
+    height: 25px;
+    vertical-align: middle;
+}
+
+.aside-nav ul li span {
+    vertical-align: middle;
+}
+
+.playlist {
+    flex-grow: 1;
+    line-height: 35px;
+}
+
+.playlist h4 {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.playlist span i {
+    font-size: 35px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.playlist-nav {
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+.aside-info img {
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.aside-info hr {
+    border: 0.5px solid #717171;
+    background-color: #717171;
+    margin: 10px 0;
+}
+
+.aside-info .profile {
+    background-color: #808080;
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.aside-info .profile-name {
+    color: #fff;
+}
+
+/* SEZIONE CONTENUTO */
+/* NAVIGAZIONE CONTENUTO */
+
+
+/* SEZIONE RECENTLY PLAYED */
+
+
+/* SEZIONE CREATO PER JOHN DOE */
+
+
+/* SEZIONE ARTISTI POPOLARI */
 
 
 /* FOOTER */
+footer {
+    background-color: #282828;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+}
