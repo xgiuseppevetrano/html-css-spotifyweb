@@ -35,6 +35,10 @@ header button {
 }
 
 /* MAIN */
+main {
+    display: flex;
+}
+
 /* SEZIONE BARRA LATELARE */
 .aside {
    background-color: #000;
@@ -124,7 +128,11 @@ header button {
 
 /* SEZIONE CONTENUTO */
 /* NAVIGAZIONE CONTENUTO */
-
+.content {
+    height: calc(100vh - (80px + 60px));
+    overflow-y: auto;
+    color: #fff;
+}
 
 /* SEZIONE RECENTLY PLAYED */
 
@@ -139,7 +147,6 @@ header button {
 footer {
     background-color: #282828;
     position: fixed;
-    z-index: 10;
     bottom: 0;
     height: 80px;
     width: 100%;
