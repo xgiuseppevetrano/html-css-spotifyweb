@@ -16,7 +16,7 @@ header {
     height: 60px;
     width: calc(100% - 250px);
     text-align: right;
-    background-color: rgba(00, 00, 00, 0.3);
+    background-color: rgba(00, 00, 00, 0.9);
     position: fixed;
     z-index: 10;
     top: 0;
@@ -27,7 +27,7 @@ header button {
     text-transform: uppercase;
     margin: 15px 20px;
     padding: 5px 15px;
-    background-color: rgba(00, 00, 00, 0.3);
+    background-color: rgba(00, 00, 00, 0.9);
     color: #fff;
     border: 1px solid #fff;
     border-radius: 20px;
@@ -37,6 +37,7 @@ header button {
 /* MAIN */
 main {
     display: flex;
+    justify-content: flex-end;
 }
 
 /* SEZIONE BARRA LATELARE */
@@ -129,7 +130,10 @@ main {
 /* SEZIONE CONTENUTO */
 /* NAVIGAZIONE CONTENUTO */
 .content {
-    height: calc(100vh - (80px + 60px));
+    height: calc(100vh - 80px);
+    width: calc(100% - 250px);
+    padding: 80px 30px 30px 30px;
+    right: 0;
     overflow-y: auto;
     color: #fff;
 }
