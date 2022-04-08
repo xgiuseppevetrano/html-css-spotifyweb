@@ -9,13 +9,23 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #141922;
-    color: #717171;
     font-weight: 500;
+    color: #fff;
 }
 
+/* TYPO */
 a {
     text-decoration: none;
     color: #717171;
+    font-size: 14px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+button, i, nav ul li, a, .play-bar-active, .col-right-bar-active, .aside-info img {
+    cursor: pointer;
 }
 
 /* HEADER */
@@ -24,7 +34,7 @@ header {
     width: calc(100% - 210px);
     text-align: right;
     padding: 15px;
-    background-color: rgba(00, 00, 00, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: 10;
     top: 0;
@@ -34,11 +44,10 @@ header {
 header button {
     text-transform: uppercase;
     padding: 5px 20px;
-    background-color: rgba(00, 00, 00, 0.9);
+    background-color: rgba(00, 00, 00, 0.8);
     color: #fff;
     border: 1px solid #fff;
     border-radius: 20px;
-    cursor: pointer;
 }
 
 /* MAIN */
@@ -56,36 +65,28 @@ main {
    flex-shrink: 2;
    padding: 20px 15px;
    overflow: hidden;
+   color: #717171;
 }
 
-.aside nav ul li {
-    list-style-type: none;
-    margin-top: 10px;
-}
-
-.aside img {
-    vertical-align: middle;
-}
-
-.big-logo, .small-logo {
+.big-logo {
     height: 40px;
 }
 
 .small-logo {
     display: none;
+    height: 30px;
 }
 
-.aside-nav, .playlist {
+.aside nav ul li, .aside-nav, .playlist {
     margin-top: 10px;
-}
+}    
 
 .aside-nav-simbols {
     height: 25px;
     fill: #717171;
-    vertical-align: middle;
 }
 
-.aside-nav span {
+.aside-nav-simbols, .aside-nav span, .fa-square-plus, .aside-info img {
     vertical-align: middle;
 }
 
@@ -113,9 +114,7 @@ main {
 
 .fa-square-plus {
     font-size: 35px;
-    vertical-align: middle;
     margin: 5px 5px 10px 0;
-    cursor: pointer;
 }
 
 .aside-info img {
@@ -127,10 +126,6 @@ main {
     border: 0.5px solid #717171;
     background-color: #717171;
     margin: 10px 0;
-}
-
-.aside-info a {
-    font-size: 13px;
 }
 
 .profile {
@@ -156,11 +151,9 @@ main {
 }
 
 .content nav ul li {
-    list-style-type: none;
     text-transform: uppercase;
     padding: 0 10px;
     display: inline-block;
-    font-size: 13px;
     position: relative;
 }
 
@@ -168,13 +161,9 @@ main {
     margin-top: 30px;
 }
 
-.content section h1 {
-    color: #fff;
+.content nav ul li, .content small {
+    color: #717171;
 }
-
-.content section > small {
-    margin: 15px 0;
-} 
 
 .row {
     display: flex;
@@ -207,10 +196,6 @@ main {
     justify-content: center;
     align-items: center;
     display: none;
-}
-
-.overlay i {
-    color: #fff;
     font-size: 50px;
 }
 
@@ -221,7 +206,6 @@ main {
 }
 
 .col h4 {
-    color: #fff;
     padding: 10px 0;
 }
 
@@ -235,52 +219,33 @@ footer {
     background-color: #282828;
     height: 80px;
     width: 100%;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 0 15px;
 }
 
-footer i {
-    cursor: pointer;
-}
-
-.col-left, .col-right {
+footer, .col-left, .col-right {
     display: flex;
     align-items: center;
 }
 
 .col-left img {
     max-height: 50px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-.col-left h5 {
-    color: #fff;
-}
-
-.col-left-album a {
-    font-size: 13px;
 }
 
 .col-left-simbols {
     margin-left: 30px;
+    color: #717171;
 }
 
-.col-left-simbols .fa-heart {
+.col-left img, .col-left-simbols .fa-heart {
     margin-right: 10px;
-}
-
-.col-middle, .col-right {
-    color: #fff;
 }
 
 .col-middle {
     text-align: center;
 }
 
-.col-middle-simbols {
+.col-middle-simbols, .play {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -295,9 +260,6 @@ footer i {
 }
 
 .play {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 10px;
 }
 
@@ -312,17 +274,12 @@ footer i {
 .play-bar-active, .col-right-bar-active {
     background-color: #c1c1c1;
     border-radius: 10px;
-    cursor: pointer;
     height: 4px;
     position: relative;
 }
 
 .play-bar-active {
     width: 70px;
-}
-
-.col-right i {
-    margin: 0 5px;
 }
 
 .col-right-bar {
@@ -333,7 +290,11 @@ footer i {
 }
 
 .col-right-bar-active {
-    width: 20px;
+    width: 25px;
+}
+
+.col-right i {
+    margin: 0 5px;
 }
 
 /* EFFECTS & ANIMATIONS */
@@ -354,10 +315,10 @@ nav ul li a:hover, a:hover {
     display: block;
     position: absolute;
     top: 0;
-    left: -20px;
+    left: -15px;
     height: 25px;
     width: 3px;
-    background-color: lightgreen;
+    background-color: #adff2f;
 }
 
 .content nav ul li a:hover::after {
@@ -368,7 +329,7 @@ nav ul li a:hover, a:hover {
     left: 50%;
     height: 3px;
     width: 30px;
-    background-color: lightgreen;
+    background-color: #adff2f;
     transform: translateX(-50%);
 }
 
@@ -381,7 +342,7 @@ nav ul li a:hover, a:hover {
 }
 
 .play-bar-active:hover, .col-right-bar-active:hover {
-    background-color: lightgreen;
+    background-color: #adff2f;
 }
 
 .play-bar-active:hover::after, .col-right-bar-active:hover::after {
@@ -392,8 +353,9 @@ nav ul li a:hover, a:hover {
     width: 12px;
     height: 12px;
     position: absolute;
-    top: -3px;
+    top: 50%;
     right: 0;
+    transform: translateY(-50%);
 }
 
 .col-middle .fa-circle-play:hover {
@@ -449,10 +411,6 @@ nav ul li a:hover, a:hover {
     .col-left-simbols .fa-heart {
         margin-bottom: 10px;
     }
-    
-    .col-left-simbols {
-        margin-left: 10px;
-    }
 }
 
 /* da 0 a 600px */
@@ -471,12 +429,11 @@ nav ul li a:hover, a:hover {
 
     .small-logo {
         display: inline-block;
-        height: 35px;
     }
 
     .aside {
         align-items: center;
-        width: 50px;
+        width: 55px;
     }
 
     .aside-info a, .aside-info h5, .aside-info hr, .playlist, .big-logo, .aside-nav ul li a span {
@@ -489,14 +446,19 @@ nav ul li a:hover, a:hover {
 
     .aside-info img {
         display: block;
+        margin-right: 0;
+    }
+
+    .content ul li {
+        margin: 5px 0;
     }
 
     header {
-        width: calc(100% - 50px);
+        width: calc(100% - 55px);
     }
 
     .content {
-        width: calc(100% - 50px);
+        width: calc(100% - 55px);
     }
 }
 
