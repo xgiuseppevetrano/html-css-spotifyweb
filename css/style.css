@@ -21,9 +21,9 @@ a {
 /* HEADER */
 header {
     height: 60px;
-    width: calc(100% - 250px);
+    width: calc(100% - 210px);
     text-align: right;
-    padding: 15px 20px;
+    padding: 15px;
     background-color: rgba(00, 00, 00, 0.9);
     position: fixed;
     z-index: 10;
@@ -50,11 +50,11 @@ main {
 /* SEZIONE BARRA LATELARE */
 .aside {
    background-color: #000;
-   width: 250px;
+   width: 210px;
    display: flex;
    flex-direction: column;
    flex-shrink: 2;
-   padding: 20px;
+   padding: 20px 15px;
    overflow: hidden;
 }
 
@@ -67,8 +67,12 @@ main {
     vertical-align: middle;
 }
 
-.logo img {
+.big-logo, .small-logo {
     height: 40px;
+}
+
+.small-logo {
+    display: none;
 }
 
 .aside-nav, .playlist {
@@ -142,7 +146,7 @@ main {
 
 /* SEZIONE CONTENUTO */
 .content {
-    width: calc(100% - 250px);
+    width: calc(100% - 210px);
     padding: 80px 30px;
     overflow-y: auto;
 }
@@ -196,10 +200,10 @@ main {
     background-color: rgba(00, 00, 00, 0.3);
     width: 100%;
     height: 100%;
-    display: flex;
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     display: none;
@@ -213,6 +217,7 @@ main {
 .col img {
     width: 100%;
     max-height: 100%;
+    display: block;
 }
 
 .col h4 {
@@ -220,7 +225,8 @@ main {
     padding: 10px 0;
 }
 
-.circle-img {
+.circle {
+    overflow: hidden;
     border-radius: 50%;
 }
 
@@ -232,20 +238,20 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 footer i {
     cursor: pointer;
 }
 
-.col-left {
+.col-left, .col-right {
     display: flex;
     align-items: center;
 }
 
 .col-left img {
-    height: 50px;
+    max-height: 50px;
     vertical-align: middle;
     margin-right: 10px;
 }
@@ -258,8 +264,12 @@ footer i {
     font-size: 13px;
 }
 
-.fa-heart {
-    margin: 0 10px 0 30px;
+.col-left-simbols {
+    margin-left: 30px;
+}
+
+.col-left-simbols .fa-heart {
+    margin-right: 10px;
 }
 
 .col-middle, .col-right {
@@ -270,11 +280,17 @@ footer i {
     text-align: center;
 }
 
-.simbols i {
+.col-middle-simbols {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-middle-simbols i {
     margin: 0 15px;
 }
 
-.fa-circle-play {
+.col-middle-simbols .fa-circle-play {
     font-size: 25px;
 }
 
@@ -288,7 +304,7 @@ footer i {
     width: 400px;
     height: 4px;
     background-color: #5a5a5a;
-    margin: 0 20px;
+    margin: 0 10px;
     border-radius: 10px;
 }
 
@@ -304,24 +320,19 @@ footer i {
     width: 70px;
 }
 
-.col-right {
-    display: flex;
-    align-items: center;
-}
-
 .col-right i {
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 .col-right-bar {
-    width: 150px;
+    width: 100px;
     height: 4px;
     background-color: #5a5a5a;
     border-radius: 10px;
 }
 
 .col-right-bar-active {
-    width: 40px;
+    width: 20px;
 }
 
 /* EFFECTS & ANIMATIONS */
@@ -353,10 +364,11 @@ nav ul li a:hover, a:hover {
     display: block;
     position: absolute;
     bottom: -5px;
-    left: 40px;
+    left: 50%;
     height: 3px;
     width: 30px;
     background-color: lightgreen;
+    transform: translateX(-50%);
 }
 
 .col-left-album a:hover {
@@ -384,9 +396,89 @@ nav ul li a:hover, a:hover {
 }
 
 .col-middle .fa-circle-play:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .col:hover .overlay {
     display: flex;
+}
+
+/* RESPONSIVE 1100px 700px 600px*/
+/* da 0 a 1100px */
+@media screen and (max-width: 1100px) {
+    .col {
+        width: calc(100% / 4 - 10px);
+    }
+
+    .play-bar {
+        width: 250px;
+    }
+
+    .play-bar-active {
+        width: 40px;
+    }
+}
+
+/* da 0 a 700px */
+@media screen and (max-width: 700px) {
+    .col {
+        width: calc(100% / 2 - 10px);
+    }
+
+    .play-bar {
+        width: 180px;
+    }
+
+    .play-bar-active {
+        width: 30px;
+    }
+
+    .col-left-simbols i {
+        display: block;
+    }
+
+    .col-left-simbols .fa-heart {
+        margin-bottom: 10px;
+    }
+    
+    .col-left-simbols {
+        margin-left: 10px;
+    }
+}
+
+/* da 0 a 600px */
+@media screen and (max-width: 600px) {
+    .aside-nav {
+        flex-grow: 1;
+    }
+
+    .small-logo {
+        display: inline-block;
+        height: 35px;
+    }
+
+    .aside {
+        align-items: center;
+        width: 50px;
+    }
+
+    .aside-info a, .aside-info h5, .aside-info hr, .playlist, .big-logo, .aside-nav ul li a span {
+        display: none;
+    }
+
+    .aside-info .profile {
+        margin-top: 20px;
+    }
+
+    .aside-info img {
+        display: block;
+    }
+
+    header {
+        width: calc(100% - 50px);
+    }
+
+    .content {
+        width: calc(100% - 50px);
+    }
 }
